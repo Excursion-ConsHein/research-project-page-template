@@ -1,5 +1,7 @@
 # Research Project Showcase Page Tutorial
 
+English Version | [中文版](README_zh.md)
+
 This tutorial will guide you through creating a professional research project showcase page with modular design, easy to maintain and extend.
 
 **Disclaimer: This project template is intended for research and educational purposes only and does not involve any commercial use.**
