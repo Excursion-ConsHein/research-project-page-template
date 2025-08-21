@@ -13,63 +13,22 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
   <script>
     window.onload = function() {
       localStorage.clear();
     };
   </script>
-
-  <style>
-
-    /* set style you like here */
-    .container {
-        margin-left: 16%;
-        margin-right: 16%;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        padding: 2rem;
-        border-radius: 8px;
-    }
-    .top-title {
-        box-sizing: inherit;
-        margin: 0;
-        padding: 0;
-        word-break: break-word;
-        text-align: center;
-        font-size: 3rem;
-        font-weight: 600;
-        line-height: 1.125;
-        color: #363636;
-        font-family: 'Google Sans', sans-serif;
-        margin-bottom: 1.5rem;
-    }
-    .conference {
-        box-sizing: inherit;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: orange;
-        font-family: 'Google Sans', sans-serif;
-        word-break: break-word;
-        line-height: 1.5;
-    }
-
-  </style>
-
+  <script src="src/signboard.js"></script>
+  <script src="src/info-button.js"></script>
+  <script src="src/authors.js"></script>
+  <script src="src/info.js"></script>
+  <script src="src/main.js"></script>
+  <script src="src/mobile.js"></script>
 </head>
 <body>
-    <script>
-        fetch('configs/page.json')
-            .then(response => response.json())
-            .then(data => {
-                document.body.innerHTML = 
-                '<div class="container">' +
-                '<h1 class="top-title">' + data["top-title"] + '</h1>' +
-                '<h3 class="conference">' + data["conference"] + '</h3>' +
-                '</div>';
-            });
-    </script>
+    <div id="main-container"></div>
+    <script src="src/copyright.js"></script>
 </body>
 </html>

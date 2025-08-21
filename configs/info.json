@@ -1,0 +1,59 @@
+{
+    "top-title": "PIPE Planner: Pathwise Information Gain with Map Predictions for Indoor Robot Exploration",
+    "conference": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025",
+    "institution":
+    {
+        "1": "Chongqing University",
+        "2": "Chongqing University of Posts and Telecommunications"
+    },
+    "authors": {
+        "ConsHein": {
+            "homepage": "https://conshein.github.io/",
+            "affiliation": "1,2",
+            "equal_or_not": true
+        },
+        "Yinglong Miao": {
+            "homepage": "https://yinglongmiao.github.io/",
+            "affiliation": "1",
+            "equal_or_not": true
+        },
+        "Yunlong Song": {
+            "affiliation": "2"
+        },
+        "Jianhao Jiao": {
+            "homepage": "https://jianhaojiao.github.io/",
+            "affiliation": "2"
+        },
+        "Lianmin Zheng": {
+            "homepage": "https://lianminzheng.github.io/",
+            "affiliation": "1"
+        },
+        "Yue Wang": {
+            "homepage": "https://yewang123.github.io/",
+            "affiliation": "1"
+        },
+        "Dian Wang": {
+            "homepage": "https://dianwang123.github.io/",
+            "affiliation": "1"
+        },
+        "Jianping Shi": {
+            "homepage": "https://jianpingshi.github.io/",
+            "affiliation": "2"
+        },
+        "Jianping Fan": {
+            "homepage": "https://jianpingfan.github.io/",
+            "affiliation": "2"
+
+        }
+    },
+    "info-button": {
+        "arxiv": "https://arxiv.org/abs/2509.08355",
+        "code": "https://github.com/ConsHein/pipe-planner",
+        "video": "https://www.youtube.com/watch?v=1234567890",
+        "demo": "https://www.youtube.com/watch?v=1234567890",
+        "related_research": {
+            "Mpex": "https://conshein.github.io/mpex/",
+            "Mpex++": "https://conshein.github.io/mpex-plus/"
+        }
+    }
+}
