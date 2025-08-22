@@ -42,10 +42,10 @@ research-project-template/
 │   ├── mobile.js         # 移动端适配模块
 │   └── copyright.js      # 页脚版权模块
 ├── font/                 # 字体资源目录
-│   ├── Excursion.woff2   # Excursion 字体文件
-│   ├── Nunito.woff2      # Nunito 字体文件
-│   ├── Oxanium.woff2     # Oxanium 字体文件
-│   └── Poppins.woff2     # Poppins 字体文件
+│   ├── Excursion.ttf     # Excursion 字体文件
+│   ├── Nunito.ttf        # Nunito 字体文件
+│   ├── Oxanium.ttf       # Oxanium 字体文件
+│   └── Poppins.ttf       # Poppins 字体文件
 └── index.html            # 主页面文件
 ```
 

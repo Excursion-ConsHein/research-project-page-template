@@ -36,7 +36,7 @@ const INFO_BUTTON_STYLES = `
 <style>
   @font-face {
     font-family: 'Oxanium';
-    src: url('../font/Oxanium.woff2') format('woff2');
+    src: url('../font/Oxanium.ttf') format('truetype');
   }
   /* info-button-container */
   .info-button-container {

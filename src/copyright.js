@@ -15,7 +15,7 @@ class CopyrightModule {
         style.textContent = `
             @font-face {
                 font-family: 'poppins';
-                src: url('../font/Poppins.woff2') format('woff2');
+                src: url('../font/Poppins.ttf') format('truetype');
             }
             
             .page-footer {

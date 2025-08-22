@@ -16,12 +16,12 @@ class MainModule {
         style.textContent = `
             @font-face {
                 font-family: 'excursion';
-                src: url('../font/Excursion.woff2') format('woff2');
+                src: url('../font/Excursion.ttf') format('truetype');
             }
 
             @font-face {
                 font-family: 'nunito';
-                src: url('../font/Nunito.woff2') format('woff2');
+                src: url('../font/Nunito.ttf') format('truetype');
             }
 
             .main-container {

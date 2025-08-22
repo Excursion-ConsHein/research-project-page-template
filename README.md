@@ -42,10 +42,10 @@ research-project-template/
 │   ├── mobile.js         # Mobile adaptation module
 │   └── copyright.js      # Footer copyright module
 ├── font/                 # Font resources directory
-│   ├── Excursion.woff2   # Excursion font file
-│   ├── Nunito.woff2      # Nunito font file
-│   ├── Oxanium.woff2     # Oxanium font file
-│   └── Poppins.woff2     # Poppins font file
+│   ├── Excursion.ttf     # Excursion font file
+│   ├── Nunito.ttf        # Nunito font file
+│   ├── Oxanium.ttf       # Oxanium font file
+│   └── Poppins.ttf       # Poppins font file
 └── index.html            # Main page file
 ```
 
