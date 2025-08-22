@@ -34,10 +34,7 @@ const ICONS = {
 // Info-button styles
 const INFO_BUTTON_STYLES = `
 <style>
-  @font-face {
-    font-family: 'Oxanium';
-    src: url('../font/Oxanium.ttf') format('truetype');
-  }
+
   /* info-button-container */
   .info-button-container {
     display: flex;

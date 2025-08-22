@@ -34,6 +34,7 @@ research-project-template/
 │   ├── video/            # Video files
 │   └── favicon/          # Webpage icon directory
 ├── src/                  # Source code directory
+│   ├── font.css          # Font styles file
 │   ├── signboard.js      # Top signboard module
 │   ├── info-button.js    # Info button module
 │   ├── authors.js        # Author information module
@@ -400,7 +401,14 @@ Google Fonts can be configured in `index.html`:
 <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 ```
 
-Of course, you can also customize the font. Just put the font file in the `font/` directory, and then reference it in `index.html` or the corresponding module's JavaScript file.
+Of course, you can also customize the font. Just put the font file in the `font/` directory, and then reference it in `src/font.css` file, for example:
+
+```css
+@font-face {
+    font-family: 'Excursion';
+    src: url('font/Excursion.ttf') format('truetype');
+}
+```
 
 Currently supported custom fonts:
 - Excursion

@@ -14,15 +14,6 @@ class MainModule {
         // Add CSS styles to head
         const style = document.createElement('style');
         style.textContent = `
-            @font-face {
-                font-family: 'excursion';
-                src: url('../font/Excursion.ttf') format('truetype');
-            }
-
-            @font-face {
-                font-family: 'nunito';
-                src: url('../font/Nunito.ttf') format('truetype');
-            }
 
             .main-container {
                 margin-left: 0;

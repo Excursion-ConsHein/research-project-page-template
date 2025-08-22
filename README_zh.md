@@ -34,6 +34,7 @@ research-project-template/
 │   ├── video/            # 视频文件目录
 │   └── favicon/          # 网页图标目录
 ├── src/                  # 源代码目录
+│   ├── font.css          # 字体样式文件
 │   ├── signboard.js      # 顶部标志栏模块
 │   ├── info-button.js    # 信息按钮模块
 │   ├── authors.js        # 作者信息模块
@@ -399,7 +400,14 @@ json中的每个对象都对应着一个模块，模块的类型由对象中的 
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 ```
-当然也可以自定义字体，只需要在 `font/` 目录下放入字体文件，然后在 `index.html` 或者对应模块的 JavaScript 文件中引入即可。
+当然也可以自定义字体，只需要在 `font/` 目录下放入字体文件，然后在 `src/font.css` 中引入即可，例如：
+
+```css
+@font-face {
+    font-family: 'Excursion';
+    src: url('font/Excursion.ttf') format('truetype');
+}
+```
 
 目前支持的自定义字体有：
 - Excursion

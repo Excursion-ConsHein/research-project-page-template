@@ -13,11 +13,7 @@ class CopyrightModule {
         // Add CSS styles to head
         const style = document.createElement('style');
         style.textContent = `
-            @font-face {
-                font-family: 'poppins';
-                src: url('../font/Poppins.ttf') format('truetype');
-            }
-            
+        
             .page-footer {
                 text-align: center;
                 padding: 2rem 1rem;
