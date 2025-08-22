@@ -1,7 +1,7 @@
 // Main module for handling modular content stacking
 
 // Written by Constantine Heinrich Chen (ConsHein Chen)
-// Last Change: 2025-08-20
+// Last Change: 2025-08-22
 
 class MainModule {
     constructor() {
@@ -148,6 +148,11 @@ class MainModule {
                 white-space: pre;
                 overflow-x: auto;
                 text-align: left;
+            }
+
+            /* When BibTeX appears, make container white */
+            .json-container:has(.bibtex-module) {
+                background-color: #ffffff !important;
             }
 
             .button-container {

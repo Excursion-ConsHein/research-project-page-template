@@ -33,7 +33,9 @@
     },
     {
         "title": "Video",
-        "videoLink": "https://www.youtube.com/embed/oZEqbCBRn-I",
+        "videoLink": "https://www.youtube.com/embed/oZEqbCBRn-I"
+    },
+    {
         "bibtex": "@article{baek2025pipe, title={PIPE Planner: Pathwise Information Gain with Map Predictions for Indoor Robot Exploration}, author={Baek, Seungjae and Moon, Brady and Kim, Seungchan and Cao, Muqing and Ho, Cherie and Scherer, Sebastian and others},journal={arXiv preprint arXiv:2503.07504},year={2025}}"
     }
 ]

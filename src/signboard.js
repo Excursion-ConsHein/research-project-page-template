@@ -1,5 +1,8 @@
 // Signboard module for displaying lab and college logos
 
+// Written by Constantine Heinrich Chen (ConsHein Chen)
+// Last Change: 2025-08-22
+
 // CSS styles for signboard
 const SIGNBOARD_STYLES = `
   <style>
