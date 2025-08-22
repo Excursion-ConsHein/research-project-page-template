@@ -40,10 +40,9 @@
         }
     },
     "info-button": {
-        "arxiv": "https://arxiv.org/abs/2509.08355",
-        "code": "https://github.com/ConsHein/pipe-planner",
-        "video": "https://www.youtube.com/watch?v=1234567890",
-        "demo": "https://www.youtube.com/watch?v=1234567890",
+        "arxiv": "https://arxiv.org/abs/2503.07504",
+        "code": "https://github.com/castacks/pipe-planner",
+        "video": "https://youtu.be/oZEqbCBRn-I",
         "related_research": {
             "MapEx Explorer": "https://mapex-explorer.github.io/",
             "MapExRL": "https://mapexrl.github.io/"
