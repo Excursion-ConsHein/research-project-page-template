@@ -255,10 +255,11 @@ json中的每个对象都对应着一个模块，模块的类型由对象中的 
 - 视频模块，包括视频文件路径（videoSrc、videoLink 等）、视频描述（description）
 - 图文模块，包括图片路径（image）、标题（title）、内容描述（content）
 - BibTeX引用模块，包括引用内容（bibtex）
-- 按钮交互模块，通过 button 触发，包括按钮名称（button_name），以及上述其他所有模块的配置项
+- 按钮交互模块，通过 button 触发，然后依次添加按钮(button_{数字})，每个按钮包括按钮名称（button_name），以及上述其他所有模块的配置项
 
 注意，如果具有多项类型相同的模块，则可以通过{模块}_{数字}的方式区分彼此，防止冲突。
-目前支持多模块的类型有： description、image、title、content、button
+
+目前支持多模块的类型有： description、image、title、content、button_{数字}
 
 下面是简单的一个示例。
 
@@ -292,23 +293,25 @@ json中的每个对象都对应着一个模块，模块的类型由对象中的 
         "content_2": "模块内容2",
     },
 
-    // 最后是按钮模块，和别的不一样，按钮只能在标题下方（如果没有标题就放在正上方），这是为了防止按钮堆叠混乱
+    // 接着是按钮模块，需要先创建 button 容器，然后再依次添加按钮，例如……
     {
         "title": "结果展示",
-        "button_1": {
-            "button_name": "按钮名称",
-            "image": "图片文件名，支持本地图片，且宽度为 800px"
-        },
-        "button_2": {
-            "button_name": "按钮名称",
-            "content": "内容"
-        },
-        "button_3": {
-            "button_name": "按钮名称",
-            "image": "图片",
-            "content": "内容"
-        },
-    }
+        "button": {
+            "button_1": {
+                "button_name": "按钮名称",
+                "image": "图片文件名，支持本地图片，且宽度为 800px"
+            },
+            "button_2": {
+                "button_name": "按钮名称",
+                "content": "内容"
+            },
+            "button_3": {
+                "button_name": "按钮名称",
+                "image": "图片",
+                "content": "内容"
+            }
+        }
+    },
     // 至于按钮能不能嵌套按钮？
     // 不好意思，作者没想好，不过我觉得这只是一个展示页面，没必要这么复杂吧
 

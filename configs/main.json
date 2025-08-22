@@ -20,13 +20,15 @@
     },
     {
         "title": "Result",
-        "button_1": {
-            "button_name": "Behavior Comparison",
-            "image": "behavior-comparison.png"
-        },
-        "button_2": {
-            "button_name": "Metrics",
-            "image": "fig6_02.png"
+        "button": {
+            "button_1": {
+                "button_name": "Behavior Comparison",
+                "image": "behavior-comparison.png"
+            },
+            "button_2": {
+                "button_name": "Metrics",
+                "image": "fig6_02.png"
+            }
         }
     },
     {

@@ -45,8 +45,8 @@
         "video": "https://www.youtube.com/watch?v=1234567890",
         "demo": "https://www.youtube.com/watch?v=1234567890",
         "related_research": {
-            "Mpex": "https://conshein.github.io/mpex/",
-            "Mpex++": "https://conshein.github.io/mpex-plus/"
+            "MapEx Explorer": "https://mapex-explorer.github.io/",
+            "MapExRL": "https://mapexrl.github.io/"
         }
     }
 }

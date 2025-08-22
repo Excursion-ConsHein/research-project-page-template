@@ -862,11 +862,23 @@ class MainModule {
             jsonContainer.className = 'json-container';
             
             // Check if this module has buttons
-            const buttonKeys = Object.keys(moduleConfig).filter(key => key === 'button' || key.startsWith('button_'));
-            let hasButtons = buttonKeys.length > 0;
+            const hasButtonContainer = moduleConfig['button'] && typeof moduleConfig['button'] === 'object';
+            let hasButtons = hasButtonContainer;
+            let buttonContainerData = null;
+            let buttonKeys = [];
+            
+            if (hasButtonContainer) {
+                buttonContainerData = moduleConfig['button'];
+                buttonKeys = Object.keys(buttonContainerData).filter(key => key.startsWith('button_'));
+            } else {
+                // Fallback to old structure for backward compatibility
+                buttonKeys = Object.keys(moduleConfig).filter(key => key === 'button' || key.startsWith('button_'));
+                hasButtons = buttonKeys.length > 0;
+            }
             let buttonContainer = null;
             let buttons = [];
             let titleModule = null;
+            let buttonContentWrapper = null;
             
             // Process all fields in the module config in the order they appear in JSON
             for (const key of Object.keys(moduleConfig)) {
@@ -956,61 +968,44 @@ class MainModule {
                         }
                     }
                 }
-            }
-            
-            // Process buttons if they exist
-            if (hasButtons) {
-                // Create button container
-                buttonContainer = this.createButtonContainer();
-                
-                // Process each button
-                for (let i = 0; i < buttonKeys.length && i < 7; i++) {
-                    const buttonKey = buttonKeys[i];
-                    const buttonData = moduleConfig[buttonKey];
+                // Handle button field - create button container at JSON field position
+                else if (key === 'button' && hasButtons) {
+                    // Create button container
+                    buttonContainer = this.createButtonContainer();
                     
-                    if (buttonData && typeof buttonData === 'object') {
-                        const buttonName = buttonData.button_name || `Button ${i + 1}`;
-                        const buttonIndex = i + 1;
+                    // Create button content wrapper
+                    buttonContentWrapper = document.createElement('div');
+                    buttonContentWrapper.className = 'button-content-wrapper';
+                    
+                    // Process each button
+                    for (let i = 0; i < buttonKeys.length && i < 7; i++) {
+                        const buttonKey = buttonKeys[i];
+                        const buttonData = hasButtonContainer ? buttonContainerData[buttonKey] : moduleConfig[buttonKey];
                         
-                        // Create button
-                        const button = this.createButtonModule(buttonName, buttonIndex, buttonKeys.length);
-                        if (button) {
-                            buttons.push(button);
-                            buttonContainer.appendChild(button);
-                        }
-                        
-                        // Create button content wrapper and container
-                        if (i === 0) {
-                            // Create wrapper for all button content
-                            const contentWrapper = document.createElement('div');
-                            contentWrapper.className = 'button-content-wrapper';
-                            jsonContainer.appendChild(contentWrapper);
-                        }
-                        
-                        const contentContainer = this.createButtonContentContainer(buttonIndex);
-                        if (contentContainer) {
-                            // Process button content
-                            await this.processButtonContent(buttonData, contentContainer);
-                            // Add to wrapper instead of directly to jsonContainer
-                            const contentWrapper = jsonContainer.querySelector('.button-content-wrapper');
-                            if (contentWrapper) {
-                                contentWrapper.appendChild(contentContainer);
+                        if (buttonData && typeof buttonData === 'object') {
+                            const buttonName = buttonData.button_name || `Button ${i + 1}`;
+                            const buttonIndex = i + 1;
+                            
+                            // Create button
+                            const button = this.createButtonModule(buttonName, buttonIndex, buttonKeys.length);
+                            if (button) {
+                                buttons.push(button);
+                                buttonContainer.appendChild(button);
+                            }
+                            
+                            const contentContainer = this.createButtonContentContainer(buttonIndex);
+                            if (contentContainer) {
+                                // Process button content
+                                await this.processButtonContent(buttonData, contentContainer);
+                                buttonContentWrapper.appendChild(contentContainer);
                             }
                         }
                     }
-                }
-                
-                // Insert button container after title or at the top if no title
-                if (titleModule && titleModule.parentNode === jsonContainer) {
-                    jsonContainer.insertBefore(buttonContainer, titleModule.nextSibling);
-                } else {
-                    // Insert at the beginning of the container
-                    const firstChild = jsonContainer.firstChild;
-                    if (firstChild) {
-                        jsonContainer.insertBefore(buttonContainer, firstChild);
-                    } else {
-                        jsonContainer.appendChild(buttonContainer);
-                    }
+                    
+                    // Add button container to JSON container at current position
+                    jsonContainer.appendChild(buttonContainer);
+                    // Add button content wrapper to JSON container
+                    jsonContainer.appendChild(buttonContentWrapper);
                 }
             }
 
@@ -1019,14 +1014,13 @@ class MainModule {
             this.modules.push(jsonContainer);
             
             // Set initial height for button content wrapper if buttons exist
-            if (hasButtons) {
+            if (hasButtons && buttonContentWrapper) {
                 setTimeout(() => {
-                    const contentWrapper = jsonContainer.querySelector('.button-content-wrapper');
-                    const firstContent = jsonContainer.querySelector('.button-content[data-button-index="1"]');
-                    if (contentWrapper && firstContent && firstContent.classList.contains('active')) {
+                    const firstContent = buttonContentWrapper.querySelector('.button-content[data-button-index="1"]');
+                    if (firstContent && firstContent.classList.contains('active')) {
                         const contentHeight = firstContent.scrollHeight;
-                        contentWrapper.style.height = `${contentHeight}px`;
-                        contentWrapper.style.minHeight = `${contentHeight}px`;
+                        buttonContentWrapper.style.height = `${contentHeight}px`;
+                        buttonContentWrapper.style.minHeight = `${contentHeight}px`;
                     }
                 }, 100);
             }

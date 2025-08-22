@@ -255,10 +255,11 @@ Each module's configuration items have their specific meanings. Here are the det
 - Video module, including video file path (videoSrc, videoLink, etc.), video description (description)
 - Image-text module, including image path (image), title (title), content description (content)
 - BibTeX citation module, including citation content (bibtex)
-- Button interaction module, triggered by button, including button name (button_name), and all other module configuration items above
+- Button interaction module, triggered by button, then add buttons (button_{number}) in sequence, each button includes button name (button_name), and all the above module configuration items
 
 Note: If there are multiple modules of the same type, you can distinguish them by {module}_{number} to prevent conflicts.
-Currently supported multi-module types are: description, image, title, content, button
+
+Currently supported multi-module types are: description, image, title, content, button_{number}
 
 Here is a simple example.
 
@@ -292,22 +293,24 @@ Here is a simple example.
         "content_2": "Module Content 2",
     },
 
-    // Finally is the button module, different from others, buttons can only be below the title (if there is no title, they are placed at the very top), this is to prevent button stacking chaos
+    // Following is the button module, need to create button container first, then add buttons in sequence, for example...
     {
         "title": "Result Display",
-        "button_1": {
-            "button_name": "Button Name",
-            "image": "Image filename, supports local images, with width of 800px"
-        },
-        "button_2": {
-            "button_name": "Button Name",
-            "content": "Content"
-        },
-        "button_3": {
-            "button_name": "Button Name",
-            "image": "Image",
-            "content": "Content"
-        },
+        "button": {
+            "button_1": {
+                "button_name": "Button Name",
+                "image": "Image filename, supports local images, with width of 800px"
+            },
+            "button_2": {
+                "button_name": "Button Name",
+                "content": "Content"
+            },
+            "button_3": {
+                "button_name": "Button Name",
+                "image": "Image",
+                "content": "Content"
+            }
+        }
     }
     // As for whether buttons can be nested within buttons?
     // Sorry, the author didn't think it through, but I think this is just a showcase page, no need to be so complicated
