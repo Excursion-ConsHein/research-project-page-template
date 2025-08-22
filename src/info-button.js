@@ -136,7 +136,7 @@ const INFO_BUTTON_STYLES = `
     transform: translateY(-10px);
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     z-index: 1000;
-    min-width: 250px;
+    min-width: 255px;
     width: auto;
     white-space: nowrap;
     box-sizing: border-box;
