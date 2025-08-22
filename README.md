@@ -518,4 +518,8 @@ You can add theme switching functionality to allow users to switch between light
 
 This tutorial provides a complete guide for creating research project showcase pages. Through modular design and configuration-driven approach, you can easily create professional research project showcase pages. The template has good scalability and maintainability, suitable for various academic research project display needs.
 
-If you encounter problems during use, you can refer to the project's source code or consult related documentation. Happy using!
+If you encounter problems during use, you can contact us through the following methods:
+- Email: Conshein_Yuanxing@outlook.com
+- GitHub: [Excursion-ConsHein](https://github.com/Excursion-ConsHein)
+
+We hope you can create a research project showcase page that suits your needs!
