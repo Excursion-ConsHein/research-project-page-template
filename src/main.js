@@ -14,6 +14,16 @@ class MainModule {
         // Add CSS styles to head
         const style = document.createElement('style');
         style.textContent = `
+            @font-face {
+                font-family: 'excursion';
+                src: url('../font/Excursion.woff2') format('woff2');
+            }
+
+            @font-face {
+                font-family: 'nunito';
+                src: url('../font/Nunito.woff2') format('woff2');
+            }
+
             .main-container {
                 margin-left: 0;
                 margin-right: 0;
@@ -40,7 +50,7 @@ class MainModule {
             }
 
             .json-container:nth-child(even) {
-                background-color: #f8f9fa;
+                background-color: #eafcff;
                 box-shadow: none;
             }
 
@@ -70,7 +80,7 @@ class MainModule {
             .description-module p {
                 margin: 0.5rem 0;
                 color: #4a4a4a;
-                font-family: inherit;
+                font-family: 'nunito', sans-serif;
                 line-height: inherit;
                 font-size: 1.1em;
                 text-align: center;
@@ -98,7 +108,7 @@ class MainModule {
             .title-module h2 {
                 margin: 2rem 0 1rem 0;
                 color: #2c3e50;
-                font-family: 'Google Sans', sans-serif;
+                font-family: 'excursion', sans-serif;
                 font-size: 2.5rem;
                 font-weight: 600;
                 text-align: center;
@@ -114,7 +124,7 @@ class MainModule {
             .content-module p {
                 margin: 0.5rem 0;
                 color: #4a4a4a;
-                font-family: inherit;
+                font-family: 'nunito', sans-serif;
                 line-height: inherit;
                 font-size: 1.1em;
                 text-align: justify;
@@ -174,7 +184,6 @@ class MainModule {
                 text-align: center;
                 padding: 2rem 1rem;
                 margin-top: 3rem;
-                font-family: "Noto Sans", sans-serif;
                 font-size: 0.9rem;
                 color: #666;
                 border-top: 1px solid #eee;

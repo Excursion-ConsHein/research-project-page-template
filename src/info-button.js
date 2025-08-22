@@ -34,6 +34,10 @@ const ICONS = {
 // Info-button styles
 const INFO_BUTTON_STYLES = `
 <style>
+  @font-face {
+    font-family: 'Oxanium';
+    src: url('../font/Oxanium.woff2') format('woff2');
+  }
   /* info-button-container */
   .info-button-container {
     display: flex;
@@ -68,7 +72,7 @@ const INFO_BUTTON_STYLES = `
     font-size: 16px;
     font-weight: 700;
     color: #000000;
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'Oxanium', sans-serif;
   }
 
   /* info-button hover */
@@ -158,7 +162,7 @@ const INFO_BUTTON_STYLES = `
     border: none;
     background-color: transparent;
     font-size: 16px;
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'Oxanium', sans-serif;
     color: #000000;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;

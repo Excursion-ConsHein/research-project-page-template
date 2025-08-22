@@ -41,6 +41,11 @@ research-project-template/
 │   ├── main.js           # 主要内容模块
 │   ├── mobile.js         # 移动端适配模块
 │   └── copyright.js      # 页脚版权模块
+├── font/                 # 字体资源目录
+│   ├── Excursion.woff2   # Excursion 字体文件
+│   ├── Nunito.woff2      # Nunito 字体文件
+│   ├── Oxanium.woff2     # Oxanium 字体文件
+│   └── Poppins.woff2     # Poppins 字体文件
 └── index.html            # 主页面文件
 ```
 
@@ -393,8 +398,14 @@ json中的每个对象都对应着一个模块，模块的类型由对象中的 
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 ```
+当然也可以自定义字体，只需要在 `font/` 目录下放入字体文件，然后在 `index.html` 或者对应模块的 JavaScript 文件中引入即可。
+
+目前支持的自定义字体有：
+- Excursion
+- Nunito
+- Oxanium
+- Poppins
 
 #### 6.2 颜色主题
 

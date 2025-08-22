@@ -41,6 +41,11 @@ research-project-template/
 │   ├── main.js           # Main content module
 │   ├── mobile.js         # Mobile adaptation module
 │   └── copyright.js      # Footer copyright module
+├── font/                 # Font resources directory
+│   ├── Excursion.woff2   # Excursion font file
+│   ├── Nunito.woff2      # Nunito font file
+│   ├── Oxanium.woff2     # Oxanium font file
+│   └── Poppins.woff2     # Poppins font file
 └── index.html            # Main page file
 ```
 
@@ -394,6 +399,14 @@ Google Fonts can be configured in `index.html`:
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 ```
+
+Of course, you can also customize the font. Just put the font file in the `font/` directory, and then reference it in `index.html` or the corresponding module's JavaScript file.
+
+Currently supported custom fonts:
+- Excursion
+- Nunito
+- Oxanium
+- Poppins
 
 #### 6.2 Color Theme
 

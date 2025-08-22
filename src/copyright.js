@@ -13,11 +13,16 @@ class CopyrightModule {
         // Add CSS styles to head
         const style = document.createElement('style');
         style.textContent = `
+            @font-face {
+                font-family: 'poppins';
+                src: url('../font/Poppins.woff2') format('woff2');
+            }
+            
             .page-footer {
                 text-align: center;
                 padding: 2rem 1rem;
                 margin-top: 3rem;
-                font-family: Poppins, Open Sans;
+                font-family: 'poppins';
                 font-size: 0.9rem;
                 color: #666;
                 border-top: 1px solid #eee;
