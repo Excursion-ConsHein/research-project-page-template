@@ -30,17 +30,18 @@ research-project-template/
 │   └── main.json         # Main content configuration
 ├── images/               # Image resources directory
 │   ├── signboard/        # Signboard images
-│   ├── main/            # Main content images
-│   └── video/           # Video files
+│   ├── main/             # Main content images
+│   ├── video/            # Video files
+│   └── favicon/          # Webpage icon directory
 ├── src/                  # Source code directory
-│   ├── signboard.js     # Top signboard module
-│   ├── info-button.js   # Info button module
-│   ├── authors.js       # Author information module
-│   ├── info.js          # Project information module
-│   ├── main.js          # Main content module
-│   ├── mobile.js        # Mobile adaptation module
-│   └── copyright.js     # Footer copyright module
-└── index.html           # Main page file
+│   ├── signboard.js      # Top signboard module
+│   ├── info-button.js    # Info button module
+│   ├── authors.js        # Author information module
+│   ├── info.js           # Project information module
+│   ├── main.js           # Main content module
+│   ├── mobile.js         # Mobile adaptation module
+│   └── copyright.js      # Footer copyright module
+└── index.html            # Main page file
 ```
 
 ## Quick Start
@@ -319,6 +320,16 @@ Here is a simple example.
     }
 
 ]
+```
+
+#### 4.4 Webpage Icon Configuration
+
+Place the webpage icon file (e.g. favicon.ico) in the `images/favicon/` directory.
+
+In `index.html`, reference the icon:
+
+```html
+<link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
 ```
 
 ### 5. Module Details

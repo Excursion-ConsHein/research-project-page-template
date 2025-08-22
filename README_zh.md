@@ -29,18 +29,19 @@ research-project-template/
 │   ├── info.json         # 项目基本信息配置
 │   └── main.json         # 主要内容配置
 ├── images/               # 图片资源目录
-│   ├── signboard/        # 标志图片
-│   ├── main/            # 主要内容图片
-│   └── video/           # 视频文件
+│   ├── signboard/        # 标志图片目录
+│   ├── main/             # 主要内容图片目录
+│   ├── video/            # 视频文件目录
+│   └── favicon/          # 网页图标目录
 ├── src/                  # 源代码目录
-│   ├── signboard.js     # 顶部标志栏模块
-│   ├── info-button.js   # 信息按钮模块
-│   ├── authors.js       # 作者信息模块
-│   ├── info.js          # 项目信息模块
-│   ├── main.js          # 主要内容模块
-│   ├── mobile.js        # 移动端适配模块
-│   └── copyright.js     # 页脚版权模块
-└── index.html           # 主页面文件
+│   ├── signboard.js      # 顶部标志栏模块
+│   ├── info-button.js    # 信息按钮模块
+│   ├── authors.js        # 作者信息模块
+│   ├── info.js           # 项目信息模块
+│   ├── main.js           # 主要内容模块
+│   ├── mobile.js         # 移动端适配模块
+│   └── copyright.js      # 页脚版权模块
+└── index.html            # 主页面文件
 ```
 
 ## 快速开始
@@ -320,6 +321,17 @@ json中的每个对象都对应着一个模块，模块的类型由对象中的 
 
 ]
 ```
+
+#### 4.4 网页图标配置
+
+将网页图标文件（如 favicon.ico）放入 `images/favicon/` 目录下。
+
+在 `index.html` 中引入图标：
+
+```html
+<link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+```
+
 
 ### 5. 模块详解
 
