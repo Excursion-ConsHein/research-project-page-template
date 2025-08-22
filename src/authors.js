@@ -87,7 +87,7 @@ class AuthorsModule {
             }
 
             .authors-container sup {
-                font-size: 0.7rem;
+                font-size: 0.85rem;
                 line-height: 0.8;
             }
         `;

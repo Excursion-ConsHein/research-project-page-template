@@ -3,47 +3,40 @@
     "conference": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2025",
     "institution":
     {
-        "1": "Chongqing University",
-        "2": "Chongqing University of Posts and Telecommunications"
+        "1": "Ulsan National Institute of Science and Technology",
+        "2": "Carnegie Mellon University Robotics Institute"
     },
     "authors": {
-        "ConsHein": {
-            "homepage": "https://conshein.github.io/",
+        "Seungjae Baek": {
+            "homepage": "https://bsj970.github.io/",
             "affiliation": "1,2",
             "equal_or_not": true
         },
-        "Yinglong Miao": {
-            "homepage": "https://yinglongmiao.github.io/",
-            "affiliation": "1",
+        "Brady Moon": {
+            "homepage": "https://bradymoon.com/",
+            "affiliation": "2",
             "equal_or_not": true
         },
-        "Yunlong Song": {
+        "Seungchan Kim": {
+            "homepage": "https://seungchan-kim.github.io/",
+            "affiliation": "2",
+            "equal_or_not": true
+        },
+        "Muqing Cao": {
+            "homepage": "https://caomuqing.github.io/",
             "affiliation": "2"
         },
-        "Jianhao Jiao": {
-            "homepage": "https://jianhaojiao.github.io/",
+        "Cherie Ho": {
+            "homepage": "https://cherieho.com/",
             "affiliation": "2"
         },
-        "Lianmin Zheng": {
-            "homepage": "https://lianminzheng.github.io/",
+        "Sebastian Scherer": {
+            "homepage": "https://theairlab.org/team/sebastian/",
+            "affiliation": "2"
+        },
+        "Jeong hwan Jeon": {
+            "homepage": "https://rml-unist.notion.site/",
             "affiliation": "1"
-        },
-        "Yue Wang": {
-            "homepage": "https://yewang123.github.io/",
-            "affiliation": "1"
-        },
-        "Dian Wang": {
-            "homepage": "https://dianwang123.github.io/",
-            "affiliation": "1"
-        },
-        "Jianping Shi": {
-            "homepage": "https://jianpingshi.github.io/",
-            "affiliation": "2"
-        },
-        "Jianping Fan": {
-            "homepage": "https://jianpingfan.github.io/",
-            "affiliation": "2"
-
         }
     },
     "info-button": {

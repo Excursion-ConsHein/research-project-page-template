@@ -6,7 +6,7 @@ This tutorial will guide you through creating a professional research project sh
 
 **Disclaimer: This project template is for research and learning purposes only and does not involve any commercial use.**
 
-**The content referenced in this project is from the latest research presentation by Carnegie Mellon University's AirLab at IROS 2025, with author and institution information virtually replaced.**
+**The content referenced in this project is from the latest research presentation by Carnegie Mellon University's AirLab at IROS 2025.**
 
 **This project does not target its research content but serves as a tutorial case for the page, not representing the position or views of any research institution.**
 
