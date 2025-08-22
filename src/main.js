@@ -745,11 +745,39 @@ class MainModule {
                 // Dynamically adjust container height to fit content
                 setTimeout(() => {
                     if (contentWrapper) {
-                        // Get the height of the active content
-                        const contentHeight = targetContent.scrollHeight;
-                        // Set the wrapper height to match content height
-                        contentWrapper.style.height = `${contentHeight}px`;
-                        contentWrapper.style.minHeight = `${contentHeight}px`;
+                        try {
+                            // Ensure content is fully rendered
+                            const images = targetContent.querySelectorAll('img');
+                            const videos = targetContent.querySelectorAll('video');
+                            
+                            if (images.length > 0 || videos.length > 0) {
+                                // Wait for media to load if present
+                                Promise.all([
+                                    ...Array.from(images).map(img => new Promise(resolve => {
+                                        if (img.complete) resolve();
+                                        else img.onload = img.onerror = resolve;
+                                    })),
+                                    ...Array.from(videos).map(video => new Promise(resolve => {
+                                        if (video.readyState >= 3) resolve();
+                                        else video.onloadeddata = video.onerror = resolve;
+                                    }))
+                                ]).then(() => {
+                                    const contentHeight = Math.max(targetContent.scrollHeight, 100); // Minimum 100px
+                                    contentWrapper.style.height = `${contentHeight}px`;
+                                    contentWrapper.style.minHeight = `${contentHeight}px`;
+                                });
+                            } else {
+                                // No media, set height immediately
+                                const contentHeight = Math.max(targetContent.scrollHeight, 100); // Minimum 100px
+                                contentWrapper.style.height = `${contentHeight}px`;
+                                contentWrapper.style.minHeight = `${contentHeight}px`;
+                            }
+                        } catch (error) {
+                            console.error('Error adjusting button container height:', error);
+                            // Fallback height on error
+                            contentWrapper.style.height = '100px';
+                            contentWrapper.style.minHeight = '100px';
+                        }
                     }
                 }, 100); // Small delay to ensure content is fully rendered
             }
@@ -1015,14 +1043,61 @@ class MainModule {
             
             // Set initial height for button content wrapper if buttons exist
             if (hasButtons && buttonContentWrapper) {
-                setTimeout(() => {
-                    const firstContent = buttonContentWrapper.querySelector('.button-content[data-button-index="1"]');
-                    if (firstContent && firstContent.classList.contains('active')) {
-                        const contentHeight = firstContent.scrollHeight;
-                        buttonContentWrapper.style.height = `${contentHeight}px`;
-                        buttonContentWrapper.style.minHeight = `${contentHeight}px`;
-                    }
-                }, 100);
+                // Set initial safe height to prevent overflow
+                buttonContentWrapper.style.height = 'auto';
+                buttonContentWrapper.style.minHeight = '0px';
+                buttonContentWrapper.style.overflow = 'hidden';
+                
+                // Use multiple attempts to ensure proper height calculation
+                const setButtonHeight = (attempt = 1) => {
+                    setTimeout(() => {
+                        try {
+                            const firstContent = buttonContentWrapper.querySelector('.button-content[data-button-index="1"]');
+                            if (firstContent && firstContent.classList.contains('active')) {
+                                // Ensure content is fully rendered
+                                const images = firstContent.querySelectorAll('img');
+                                const videos = firstContent.querySelectorAll('video');
+                                
+                                if (images.length > 0 || videos.length > 0) {
+                                    // Wait for media to load if present
+                                    Promise.all([
+                                        ...Array.from(images).map(img => new Promise(resolve => {
+                                            if (img.complete) resolve();
+                                            else img.onload = img.onerror = resolve;
+                                        })),
+                                        ...Array.from(videos).map(video => new Promise(resolve => {
+                                            if (video.readyState >= 3) resolve();
+                                            else video.onloadeddata = video.onerror = resolve;
+                                        }))
+                                    ]).then(() => {
+                                        const contentHeight = Math.max(firstContent.scrollHeight, 100); // Minimum 100px
+                                        buttonContentWrapper.style.height = `${contentHeight}px`;
+                                        buttonContentWrapper.style.minHeight = `${contentHeight}px`;
+                                    });
+                                } else {
+                                    // No media, set height immediately
+                                    const contentHeight = Math.max(firstContent.scrollHeight, 100); // Minimum 100px
+                                    buttonContentWrapper.style.height = `${contentHeight}px`;
+                                    buttonContentWrapper.style.minHeight = `${contentHeight}px`;
+                                }
+                            } else if (attempt < 3) {
+                                // Retry if content not found (max 3 attempts)
+                                setButtonHeight(attempt + 1);
+                            } else {
+                                // Fallback: set minimum height
+                                buttonContentWrapper.style.height = '100px';
+                                buttonContentWrapper.style.minHeight = '100px';
+                            }
+                        } catch (error) {
+                            console.error('Error setting button container height:', error);
+                            // Fallback height on error
+                            buttonContentWrapper.style.height = '100px';
+                            buttonContentWrapper.style.minHeight = '100px';
+                        }
+                    }, attempt * 100); // Increasing delay for each attempt
+                };
+                
+                setButtonHeight();
             }
         }
     }
