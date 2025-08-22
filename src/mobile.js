@@ -53,6 +53,12 @@ class MobileModule {
                     margin: 1.5rem 0 0.8rem 0;
                 }
                 
+                /* Reduce BibTeX title size */
+                .bibtex-title {
+                    font-size: 1.8rem !important;
+                    margin: 2.5rem 0 0.8rem 0;
+                }
+                
                 /* Dynamic body margin for stacked signboard */
                 body {
                     margin-top: calc(35px + 35px + 15px + 10px + 20px + 10px) !important;
@@ -91,6 +97,12 @@ class MobileModule {
                 .title-module h2 {
                     font-size: 1.5rem !important;
                     margin: 1rem 0 0.5rem 0;
+                }
+                
+                /* Further reduce BibTeX title size */
+                .bibtex-title {
+                    font-size: 1.5rem !important;
+                    margin: 2rem 0 0.5rem 0;
                 }
                 
                 /* Dynamic body margin for smaller signboard */

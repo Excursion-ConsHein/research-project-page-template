@@ -129,7 +129,7 @@ class MainModule {
             }
 
             .bibtex-title {
-                font-family: 'Google Sans', sans-serif;
+                font-family: 'excursion', sans-serif;
                 font-size: 2.5rem;
                 font-weight: 600;
                 color: #2c3e50;
