@@ -362,6 +362,14 @@ class MainModule {
             return null;
         }
 
+        // Add video root directory prefix for local files
+        if (videoType === 'videoSrc' || videoType === 'videoLink') {
+            // Check if it's a local file (not a URL or iframe)
+            if (!videoUrl.includes('http') && !videoUrl.includes('iframe') && !videoUrl.startsWith('/')) {
+                videoUrl = 'images/video/' + videoUrl;
+            }
+        }
+
         const videoModule = document.createElement('div');
         videoModule.className = 'video-module';
 
@@ -471,6 +479,11 @@ class MainModule {
     createImageModule(imageUrl) {
         if (!imageUrl || imageUrl.trim() === '') {
             return null;
+        }
+
+        // Add main image root directory prefix for local files
+        if (!imageUrl.includes('http') && !imageUrl.startsWith('/')) {
+            imageUrl = 'images/main/' + imageUrl;
         }
 
         const imageModule = document.createElement('div');

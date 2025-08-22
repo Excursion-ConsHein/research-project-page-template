@@ -85,7 +85,12 @@ async function createSignboard() {
     
     const labLogo = document.createElement('img');
     labLogo.className = 'logo lab-logo';
-    labLogo.src = config.lab.logoSrc;
+    // Add signboard root directory prefix for local files
+    let labLogoSrc = config.lab.logoSrc;
+    if (!labLogoSrc.includes('http') && !labLogoSrc.startsWith('/')) {
+        labLogoSrc = 'images/signboard/' + labLogoSrc;
+    }
+    labLogo.src = labLogoSrc;
     labLogo.alt = 'Laboratory Logo';
     labLogo.onerror = function() {
       console.error('Lab logo not found at:', config.lab.logoSrc);
@@ -102,7 +107,12 @@ async function createSignboard() {
     
     const collegeLogo = document.createElement('img');
     collegeLogo.className = 'logo college-logo';
-    collegeLogo.src = config.college.logoSrc;
+    // Add signboard root directory prefix for local files
+    let collegeLogoSrc = config.college.logoSrc;
+    if (!collegeLogoSrc.includes('http') && !collegeLogoSrc.startsWith('/')) {
+        collegeLogoSrc = 'images/signboard/' + collegeLogoSrc;
+    }
+    collegeLogo.src = collegeLogoSrc;
     collegeLogo.alt = 'College Logo';
     collegeLogo.onerror = function() {
       console.error('College logo not found at:', config.college.logoSrc);

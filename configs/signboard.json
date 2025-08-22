@@ -1,10 +1,10 @@
 {
     "lab": {
-        "logoSrc": "images/signboard/lab.png",
+        "logoSrc": "lab.png",
         "url": "https://theairlab.org/"
     },
     "college": {
-        "logoSrc": "images/signboard/college.svg",
+        "logoSrc": "college.svg",
         "url": "https://www.ri.cmu.edu/"
     }
 }
